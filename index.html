@@ -605,3 +605,21 @@
   <td><span class="bi-lim">Limited</span></td>
   <td><a class="bi-link" href="https://app.powerbi.com/groups/0513d140-7dc6-42f9-90bc-59b0f31b215a/reports/ec930607-6e5a-4d68-9be0-24879f45e940" target="_blank">Open &#8599;</a></td>
 </tr></tbody></table>
+
+<script>
+  function resizeIframe() {
+    var height = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+    window.parent.postMessage({ height: height }, '*');
+  }
+
+  window.addEventListener('load', resizeIframe);
+  window.addEventListener('resize', resizeIframe);
+
+  if (window.MutationObserver) {
+    var observer = new MutationObserver(resizeIframe);
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+  }
+</script>
