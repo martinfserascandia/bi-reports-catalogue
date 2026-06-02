@@ -1,0 +1,35 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Azure/Fabric local auth/cache
+**/.az-fabric/
+
+# Logs and local run outputs
+*.log
+*.tmp
+*.bak
+
+# Local generated exports/reports
+Fabric API/Dashboard rewrite/fabric_reports_*.csv
+Fabric API/security_audit_*.csv

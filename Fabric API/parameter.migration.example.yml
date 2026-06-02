@@ -1,0 +1,62 @@
+# Example parameter file for migrating from one workspace to another
+# while keeping dependencies inside the TARGET workspace.
+#
+# Replace placeholders like <TARGET_LAKEHOUSE_NAME> and activity/item names.
+# Dynamic replacements follow fabric-cicd docs:
+# - $workspace.$id
+# - $items.<ItemType>.<ItemName>.$id
+
+find_replace:
+  # Notebook: replace embedded default lakehouse ID with the target workspace lakehouse ID.
+  - find_value: '\#\s*META\s+"default_lakehouse":\s*"([0-9a-fA-F-]{36})"'
+    replace_value:
+      _ALL_: "$items.Lakehouse.<TARGET_LAKEHOUSE_NAME>.$id"
+    is_regex: "true"
+    item_type: "Notebook"
+
+  # Notebook: force default lakehouse workspace id to the target workspace id.
+  - find_value: '\#\s*META\s+"default_lakehouse_workspace_id":\s*"([0-9a-fA-F-]{36})"'
+    replace_value:
+      _ALL_: "$workspace.$id"
+    is_regex: "true"
+    item_type: "Notebook"
+
+  # Dataflow Gen2 M script: replace referenced workspaceId with target workspace id.
+  - find_value: 'workspaceId\s*=\s*"([0-9a-fA-F-]{36})"'
+    replace_value:
+      _ALL_: "$workspace.$id"
+    is_regex: "true"
+    item_type: "Dataflow"
+
+  # Dataflow Gen2 M script: replace referenced lakehouseId with target lakehouse id.
+  - find_value: 'lakehouseId\s*=\s*"([0-9a-fA-F-]{36})"'
+    replace_value:
+      _ALL_: "$items.Lakehouse.<TARGET_LAKEHOUSE_NAME>.$id"
+    is_regex: "true"
+    item_type: "Dataflow"
+
+key_value_replace:
+  # Data Pipeline activity: force workspaceId to target workspace.
+  - find_key: '$.properties.activities[?(@.name=="<PIPELINE_ACTIVITY_NAME>")].typeProperties.workspaceId'
+    replace_value:
+      _ALL_: "$workspace.$id"
+    item_type: "DataPipeline"
+
+  # Data Pipeline activity: bind notebookId to notebook deployed in the target workspace.
+  - find_key: '$.properties.activities[?(@.name=="<PIPELINE_ACTIVITY_NAME>")].typeProperties.notebookId'
+    replace_value:
+      _ALL_: "$items.Notebook.<TARGET_NOTEBOOK_NAME>.$id"
+    item_type: "DataPipeline"
+
+  # Data Pipeline activity: bind lakehouseId to target workspace lakehouse.
+  - find_key: '$.properties.activities[?(@.name=="<PIPELINE_ACTIVITY_NAME>")].typeProperties.lakehouseId'
+    replace_value:
+      _ALL_: "$items.Lakehouse.<TARGET_LAKEHOUSE_NAME>.$id"
+    item_type: "DataPipeline"
+
+semantic_model_binding:
+  # Bind semantic model connections in each environment to the correct connection ID.
+  # Use connection IDs from the TARGET workspace.
+  - dataset_name: "<SEMANTIC_MODEL_NAME>"
+    connection_id:
+      _ALL_: "<TARGET_CONNECTION_ID_GUID>"

@@ -1,0 +1,146 @@
+# Fabric migration parameter file for Konsolidator_Dev -> Konsolidator
+# Built from current repository contents in C:\repos\Konsolidator_Dev
+#
+# Goal:
+# - Force all internal references to destination workspace and destination items.
+# - Keep dataflows/pipelines/notebooks bound inside the same workspace.
+#
+# Important:
+# - Two notebook mappings are best-effort assumptions and should be validated once:
+#   1) 49b5fb34-... -> Compare_Consolidations
+#   2) cdd501b2-... -> SQL_Delete_Data_Consolidated_Accounts
+
+find_replace:
+  # ---------------------------------------------------------------------------
+  # Notebook metadata replacements (python/sql notebook formats)
+  # ---------------------------------------------------------------------------
+  # Existing source IDs observed in notebook META blocks:
+  # - default_lakehouse workspace id: ffc4e686-626b-49c0-9f9e-41f3d2f56869
+  # - default_lakehouse ids:
+  #   - 35554c2a-9613-430e-a189-b30085efaed3 (Konsolidator_Bronze_LH)
+  #   - c31c29c6-0101-477a-9687-fd29e1ab8811 (Konsolidator_Dev)
+  - find_value: '(#|--)\s*META\s+"default_lakehouse_workspace_id":\s*"([0-9a-fA-F-]{36})"'
+    replace_value:
+      _ALL_: "$workspace.$id"
+    is_regex: "true"
+    item_type: "Notebook"
+
+  - find_value: '(#|--)\s*META\s+"default_lakehouse":\s*"35554c2a-9613-430e-a189-b30085efaed3"'
+    replace_value:
+      _ALL_: "$items.Lakehouse.Konsolidator_Bronze_LH.$id"
+    is_regex: "true"
+    item_type: "Notebook"
+
+  - find_value: '(#|--)\s*META\s+"default_lakehouse":\s*"c31c29c6-0101-477a-9687-fd29e1ab8811"'
+    replace_value:
+      _ALL_: "$items.Lakehouse.Konsolidator_Dev.$id"
+    is_regex: "true"
+    item_type: "Notebook"
+
+  # ---------------------------------------------------------------------------
+  # Dataflow M script replacements (workspace/lakehouse references)
+  # ---------------------------------------------------------------------------
+  - find_value: 'workspaceId\s*=\s*"([0-9a-fA-F-]{36})"'
+    replace_value:
+      _ALL_: "$workspace.$id"
+    is_regex: "true"
+    item_type: "Dataflow"
+    file_path:
+      - "**/mashup.pq"
+
+  # All current dataflows point to one source lakehouse id:
+  # f325d633-c89c-43e7-8a1d-3dcd713cc366
+  # This maps to destination Lakehouse: Konsolidator_Dev
+  - find_value: 'lakehouseId\s*=\s*"f325d633-c89c-43e7-8a1d-3dcd713cc366"'
+    replace_value:
+      _ALL_: "$items.Lakehouse.Konsolidator_Dev.$id"
+    is_regex: "true"
+    item_type: "Dataflow"
+    file_path:
+      - "**/mashup.pq"
+
+  # ---------------------------------------------------------------------------
+  # Data pipeline replacements (regex-based) to keep all references internal
+  # ---------------------------------------------------------------------------
+  - find_value: '"workspaceId"\s*:\s*"[0-9a-fA-F-]{36}"'
+    replace_value:
+      _ALL_: '"workspaceId": "$workspace.$id"'
+    is_regex: "true"
+    item_type: "DataPipeline"
+    file_path:
+      - "**/pipeline-content.json"
+
+  # LinkedService artifact IDs
+  - find_value: "8212e52b-a437-adac-4ea5-92c29ca69a5e"
+    replace_value:
+      _ALL_: "$items.Lakehouse.Konsolidator_Dev.$id"
+    item_type: "DataPipeline"
+    file_path:
+      - "**/pipeline-content.json"
+
+  - find_value: "b54d4919-7821-42d4-86ad-ce3ea37e1736"
+    replace_value:
+      _ALL_: "$items.Lakehouse.Konsolidator_Dev.$id"
+    item_type: "DataPipeline"
+    file_path:
+      - "**/pipeline-content.json"
+
+  - find_value: "e3d83649-7a75-4366-a6a3-e616d8f51082"
+    replace_value:
+      _ALL_: "$items.Warehouse.Konsolidator_Silver_WH.$id"
+    item_type: "DataPipeline"
+    file_path:
+      - "**/pipeline-content.json"
+
+  # ImportData pipeline -> Dataflow IDs
+  - find_value: "9c9fcd40-d560-8551-409a-e7170f01c79f"
+    replace_value:
+      _ALL_: "$items.Dataflow.KonsolidatorData_CICD.$id"
+    item_type: "DataPipeline"
+    file_path:
+      - "**/pipeline-content.json"
+
+  - find_value: "7bb54ab7-7cce-a9e0-4346-81ec4ba9a887"
+    replace_value:
+      _ALL_: "$items.Dataflow.KonsolidatorSetupExcelFile.$id"
+    item_type: "DataPipeline"
+    file_path:
+      - "**/pipeline-content.json"
+
+  - find_value: "d04987e7-068b-a197-485f-8b80faa9a00e"
+    replace_value:
+      _ALL_: "$items.Dataflow.KonsolidatorReports_CICD.$id"
+    item_type: "DataPipeline"
+    file_path:
+      - "**/pipeline-content.json"
+
+  # Notebook IDs in Get_Financial_Data pipeline
+  - find_value: "1781b8e5-014d-9a0b-4981-8e83c58fc01b"
+    replace_value:
+      _ALL_: "$items.Notebook.SQL_Delete_Data_Uploaded_Accounts.$id"
+    item_type: "DataPipeline"
+    file_path:
+      - "**/pipeline-content.json"
+
+  # Best-effort mapping - validate once in destination run logs
+  - find_value: "cdd501b2-c661-4e02-bffa-9b5fce500121"
+    replace_value:
+      _ALL_: "$items.Notebook.SQL_Delete_Data_Consolidated_Accounts.$id"
+    item_type: "DataPipeline"
+    file_path:
+      - "**/pipeline-content.json"
+
+  # Best-effort mapping - validate once in destination run logs
+  - find_value: "49b5fb34-5506-45e6-8c61-314755e0393e"
+    replace_value:
+      _ALL_: "$items.Notebook.Compare_Consolidations.$id"
+    item_type: "DataPipeline"
+    file_path:
+      - "**/pipeline-content.json"
+
+# Optional section for semantic model connection rebinding.
+# Add real connection IDs from destination workspace when ready.
+# semantic_model_binding:
+#   - dataset_name: "Konsolidator_PBI"
+#     connection_id:
+#       _ALL_: "<DEST_CONNECTION_ID_GUID>"

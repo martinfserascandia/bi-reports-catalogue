@@ -8,11 +8,14 @@
 .bi-search-input:focus{outline:none;border-color:#0078d4;box-shadow:0 0 0 1px #0078d4}
 .bi-search-count{font-family:Segoe UI,sans-serif;font-size:12px;color:#605e5c}
 .bi-section-title{font-family:Segoe UI,sans-serif;font-size:18px;font-weight:700;line-height:1.3;color:#201f1e;margin:18px 0 8px}
+.bi-table{table-layout:fixed}
+.bi-desc-col{width:22%!important}
+.bi-desc{font-size:12px;line-height:1.35;color:#323130}
 </style>
 
 <div class="bi-page-header">
   <h1 class="bi-page-title">BI Reports Catalogue</h1>
-  <p class="bi-page-subtitle">Search by report name, country, area, owner, schedule or status.</p>
+  <p class="bi-page-subtitle">Search by report name, description, country, area, owner, schedule or status.</p>
   <div class="bi-search-wrap">
     <input id="bi-search-input" class="bi-search-input" type="search" placeholder="Search reports..." aria-label="Search reports" />
     <span id="bi-search-count" class="bi-search-count">Showing all reports</span>
@@ -306,22 +309,6 @@
   <td><span class="bi-op">Operative</span></td>
   <td><a class="bi-link" href="https://app.powerbi.com/groups/ec43198a-709a-499a-b5a5-bdb25ebca6ae/reports/b7f6e6f2-0066-4c3b-9b22-798ffb2a5389" target="_blank">Open &#8599;</a></td>
 </tr><tr>
-  <td><div class="bi-std">Export Status Overview</div><div class="bi-orig">BI_BW_Exp_Status</div></td>
-  <td class="bi-meta">FR</td>
-  <td class="bi-meta">Supply Chain</td>
-  <td class="bi-meta">Real Time</td>
-  <td class="bi-meta">Benoit</td>
-  <td><span class="bi-op">Operative</span></td>
-  <td><a class="bi-link" href="https://app.powerbi.com/groups/ea58b6e8-680b-4c4f-ada5-a47f27fd2e79/reports/b702814c-0469-4161-9931-66f99e773084" target="_blank">Open &#8599;</a></td>
-</tr><tr>
-  <td><div class="bi-std">BW FR Sales and Gross Margin Overview</div><div class="bi-orig">KPI Gross Margin V2</div></td>
-  <td class="bi-meta">FR</td>
-  <td class="bi-meta">Finance</td>
-  <td class="bi-meta">Weekly</td>
-  <td class="bi-meta">Samuel / Aron</td>
-  <td><span class="bi-op">Operative</span></td>
-  <td><a class="bi-link" href="https://app.powerbi.com/groups/56056b1e-7673-4ad2-9690-857d3b4ea009/reports/d9af3075-feb7-45a2-b378-43cca7914c62" target="_blank">Open &#8599;</a></td>
-</tr><tr>
   <td><div class="bi-std">Biowest Sales Analysis</div><div class="bi-orig">Biowest Sales Analysis V2</div></td>
   <td class="bi-meta">FR</td>
   <td class="bi-meta">Sales</td>
@@ -329,70 +316,6 @@
   <td class="bi-meta">Samuel</td>
   <td><span class="bi-op">Operative</span></td>
   <td><a class="bi-link" href="https://app.powerbi.com/groups/94b71e0d-fe8d-4f8a-bbdc-19651515fac4/reports/6c623d42-73bc-4896-b573-8f67542d1c25" target="_blank">Open &#8599;</a></td>
-</tr></tbody></table>
-
-<!-- ==================== Governance and Platform Insights ==================== -->
-<h2 class="bi-section-title">Governance and Platform Insights</h2>
-<style>
-.bi-table{width:100%;border-collapse:collapse;font-family:Segoe UI,sans-serif;font-size:13px;margin-bottom:8px}
-.bi-table th{background:#f3f2f1;font-weight:600;font-size:12px;color:#605e5c;text-align:left;padding:8px 10px;border-bottom:2px solid #e1dfdd}
-.bi-table td{padding:7px 10px;border-bottom:1px solid #edebe9;color:#323130;vertical-align:top}
-.bi-table tr:hover td{background:#faf9f8}
-.bi-std{font-weight:600;color:#201f1e}
-.bi-orig{font-size:11px;color:#a19f9d}
-.bi-meta{font-size:12px;color:#605e5c}
-.bi-op{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#dff6dd;color:#107c10}
-.bi-lim{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#fff4ce;color:#8a6914}
-.bi-link{color:#0078d4;text-decoration:none;font-size:12px}
-.bi-link:hover{text-decoration:underline}
-</style><table class="bi-table"><thead><tr>
-  <th style="width:30%">Report name</th>
-  <th style="width:12%">Country</th>
-  <th style="width:14%">Area</th>
-  <th style="width:15%">Schedule</th>
-  <th style="width:13%">Owner</th>
-  <th style="width:9%">Health</th>
-  <th style="width:7%">Link</th>
-</tr></thead><tbody><tr>
-  <td><div class="bi-std">BI Catalog and Health Overview</div><div class="bi-orig">BI Catalog & Health</div></td>
-  <td class="bi-meta">Global</td>
-  <td class="bi-meta">Governance</td>
-  <td class="bi-meta">—</td>
-  <td class="bi-meta">—</td>
-  <td><span class="bi-op">Operative</span></td>
-  <td><a class="bi-link" href="https://app.powerbi.com/groups/4d42d20e-174e-47fd-8c36-02148811a7f9/reports/85d24dfd-5010-45cc-b157-ec7a86aab939" target="_blank">Open &#8599;</a></td>
-</tr></tbody></table>
-
-<!-- ==================== Import and Export Analytics ==================== -->
-<h2 class="bi-section-title">Import and Export Analytics</h2>
-<style>
-.bi-table{width:100%;border-collapse:collapse;font-family:Segoe UI,sans-serif;font-size:13px;margin-bottom:8px}
-.bi-table th{background:#f3f2f1;font-weight:600;font-size:12px;color:#605e5c;text-align:left;padding:8px 10px;border-bottom:2px solid #e1dfdd}
-.bi-table td{padding:7px 10px;border-bottom:1px solid #edebe9;color:#323130;vertical-align:top}
-.bi-table tr:hover td{background:#faf9f8}
-.bi-std{font-weight:600;color:#201f1e}
-.bi-orig{font-size:11px;color:#a19f9d}
-.bi-meta{font-size:12px;color:#605e5c}
-.bi-op{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#dff6dd;color:#107c10}
-.bi-lim{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#fff4ce;color:#8a6914}
-.bi-link{color:#0078d4;text-decoration:none;font-size:12px}
-.bi-link:hover{text-decoration:underline}
-</style><table class="bi-table"><thead><tr>
-  <th style="width:30%">Report name</th>
-  <th style="width:12%">Country</th>
-  <th style="width:14%">Area</th>
-  <th style="width:15%">Schedule</th>
-  <th style="width:13%">Owner</th>
-  <th style="width:9%">Health</th>
-  <th style="width:7%">Link</th>
-</tr></thead><tbody><tr>
-  <td><div class="bi-std">EU FBS Import Map</div><div class="bi-orig">Interactive map Imports EU FBS</div></td>
-  <td class="bi-meta">EU</td>
-  <td class="bi-meta">Import / Export</td>
-  <td class="bi-meta">—</td>
-  <td class="bi-meta">—</td>
-  <td><span class="bi-op">Operative</span></td>
-  <td><a class="bi-link" href="https://app.powerbi.com/groups/915ee835-9103-4144-94d4-492aa6485de9/reports/3efebdcf-7981-4919-a2d1-16b217cc81ab" target="_blank">Open &#8599;</a></td>
 </tr></tbody></table>
 
 <!-- ==================== Inventory and Supply Chain ==================== -->
@@ -437,15 +360,23 @@
   <td><div class="bi-std">BW FR Inventory Overview</div><div class="bi-orig">Inventory_FR</div></td>
   <td class="bi-meta">FR</td>
   <td class="bi-meta">Supply Chain</td>
-  <td class="bi-meta">No schedule</td>
-  <td class="bi-meta">Nicolas</td>
+  <td class="bi-meta">Weekly. Thursdays</td>
+  <td class="bi-meta">Samuel/FR BPO</td>
   <td><span class="bi-op">Operative</span></td>
   <td><a class="bi-link" href="https://app.powerbi.com/groups/889ff3ea-d00f-46eb-b418-db66c36a011d/reports/e277474d-01b5-4a61-9e7f-503e73960c69" target="_blank">Open &#8599;</a></td>
+</tr><tr>
+  <td><div class="bi-std">SKU Availibility BW FR Inventory</div><div class="bi-orig">SKU Availibility BW FR Inventory</div></td>
+  <td class="bi-meta">FR</td>
+  <td class="bi-meta">Supply Chain</td>
+  <td class="bi-meta">Weekly. Thursdays</td>
+  <td class="bi-meta">Samuel/FR BPO</td>
+  <td><span class="bi-op">Operative</span></td>
+  <td><a class="bi-link" href="https://app.powerbi.com/groups/889ff3ea-d00f-46eb-b418-db66c36a011d/reports/51875b85-721a-4e97-a98b-e8d5a985059c" target="_blank">Open &#8599;</a></td>
 </tr><tr>
   <td><div class="bi-std">BW USA Inventory Overview</div><div class="bi-orig">BW_USA_Inventory</div></td>
   <td class="bi-meta">USA</td>
   <td class="bi-meta">Supply Chain</td>
-  <td class="bi-meta">No schedule</td>
+  <td class="bi-meta">Weekly. Thursdays</td>
   <td class="bi-meta">Nicolas</td>
   <td><span class="bi-op">Operative</span></td>
   <td><a class="bi-link" href="https://app.powerbi.com/groups/c16ba4db-024a-4e11-93df-6e2b2be02034/reports/3fce1d57-c328-419a-903c-b6b5507eed7a" target="_blank">Open &#8599;</a></td>
@@ -482,6 +413,14 @@
   <td><span class="bi-op">Operative</span></td>
   <td><a class="bi-link" href="https://app.powerbi.com/groups/69a30478-fff0-43e5-96ad-0ceb176209bb/reports/58e8b0e5-4e5a-46f1-8a2b-ede4bce5b93f" target="_blank">Open &#8599;</a></td>
 </tr><tr>
+  <td><div class="bi-std">BW FR Sales and Gross Margin Overview</div><div class="bi-orig">KPI Gross Margin V2</div></td>
+  <td class="bi-meta">FR</td>
+  <td class="bi-meta">Finance</td>
+  <td class="bi-meta">Weekly</td>
+  <td class="bi-meta">Samuel / Aron</td>
+  <td><span class="bi-op">Operative</span></td>
+  <td><a class="bi-link" href="https://app.powerbi.com/groups/56056b1e-7673-4ad2-9690-857d3b4ea009/reports/d9af3075-feb7-45a2-b378-43cca7914c62" target="_blank">Open &#8599;</a></td>
+</tr><tr>
   <td><div class="bi-std">BW USA Sales and Gross Margin Overview</div><div class="bi-orig">BW_USA_Sales_Gross_Margin</div></td>
   <td class="bi-meta">USA</td>
   <td class="bi-meta">Finance</td>
@@ -497,6 +436,54 @@
   <td class="bi-meta">Aron / Nicolas</td>
   <td><span class="bi-op">Operative</span></td>
   <td><a class="bi-link" href="https://app.powerbi.com/groups/8c13bfaf-746a-4f7b-b54a-6ae9e3c15eec/reports/e519217a-af75-4481-9437-334fabbd52ae" target="_blank">Open &#8599;</a></td>
+</tr><tr>
+  <td><div class="bi-std">Mayimex Sales and Gross Margin Overview</div><div class="bi-orig">MAYIMEX_Sales_Gross_Margin</div></td>
+  <td class="bi-meta">Mexico</td>
+  <td class="bi-meta">Finance</td>
+  <td class="bi-meta">Weekly. Friday</td>
+  <td class="bi-meta">Aron / Nicolas</td>
+  <td><span class="bi-op">Operative</span></td>
+  <td><a class="bi-link" href="https://app.powerbi.com/groups/6013dc0b-66de-4784-a87f-7f3322b8e362/reports/07c9551b-1a9a-4947-9882-b581cad89f26" target="_blank">Open &#8599;</a></td>
+</tr><tr>
+  <td><div class="bi-std">ProtenaNI Sales and Gross Margin Overview</div><div class="bi-orig">ProtenaNI_Sales_Gross_Margin</div></td>
+  <td class="bi-meta">Nicaragua</td>
+  <td class="bi-meta">Finance</td>
+  <td class="bi-meta">Weekly. Friday</td>
+  <td class="bi-meta">Aron / Nicolas</td>
+  <td><span class="bi-op">Operative</span></td>
+  <td><a class="bi-link" href="https://app.powerbi.com/groups/2f79a991-b0a5-417f-b9e9-d83e68f14efa/reports/41a8dcd3-509b-41bc-a73c-f4e56b17818d" target="_blank">Open &#8599;</a></td>
+</tr></tbody></table>
+
+<!-- ==================== Budget tracking SAP B1 ==================== -->
+<h2 class="bi-section-title">Budget tracking SAP B1</h2>
+<style>
+.bi-table{width:100%;border-collapse:collapse;font-family:Segoe UI,sans-serif;font-size:13px;margin-bottom:8px}
+.bi-table th{background:#f3f2f1;font-weight:600;font-size:12px;color:#605e5c;text-align:left;padding:8px 10px;border-bottom:2px solid #e1dfdd}
+.bi-table td{padding:7px 10px;border-bottom:1px solid #edebe9;color:#323130;vertical-align:top}
+.bi-table tr:hover td{background:#faf9f8}
+.bi-std{font-weight:600;color:#201f1e}
+.bi-orig{font-size:11px;color:#a19f9d}
+.bi-meta{font-size:12px;color:#605e5c}
+.bi-op{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#dff6dd;color:#107c10}
+.bi-lim{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#fff4ce;color:#8a6914}
+.bi-link{color:#0078d4;text-decoration:none;font-size:12px}
+.bi-link:hover{text-decoration:underline}
+</style><table class="bi-table"><thead><tr>
+  <th style="width:30%">Report name</th>
+  <th style="width:12%">Country</th>
+  <th style="width:14%">Area</th>
+  <th style="width:15%">Schedule</th>
+  <th style="width:13%">Owner</th>
+  <th style="width:9%">Health</th>
+  <th style="width:7%">Link</th>
+</tr></thead><tbody><tr>
+  <td><div class="bi-std">Budget Overview Prot Ni</div><div class="bi-orig">Budget Dashboard</div></td>
+  <td class="bi-meta">Nicaragua</td>
+  <td class="bi-meta">Finance</td>
+  <td class="bi-meta">No schedule</td>
+  <td class="bi-meta">Gabriel</td>
+  <td><span class="bi-op">Operative</span></td>
+  <td><a class="bi-link" href="https://app.powerbi.com/groups/2f79a991-b0a5-417f-b9e9-d83e68f14efa/reports/8d7e2d32-dba3-406d-b42e-5790e9134cac" target="_blank">Open &#8599;</a></td>
 </tr></tbody></table>
 
 <!-- ==================== SCS Analytics ==================== -->
@@ -663,7 +650,139 @@
     return null;
   }
 
+  function normalizeKey(value) {
+    return (value || '').replace(/\s+/g, ' ').trim().toLowerCase();
+  }
+
+  function getDescriptionFromLegacyData(stdName, origName) {
+    var byOriginal = {
+      'digital marketing bionutrientes(sql)': 'SEO performance.',
+      'digital marketing biosera(sql)': 'SEO performance.',
+      'digital marketing bw (sql)': 'SEO performance.',
+      'digital marketing bwusa (sql)': 'SEO performance.',
+      'digital marketing maymex (sql)': 'SEO performance.',
+      'digital marketing mse (sql)': 'SEO performance.',
+      'digital marketing omega (sql)': 'SEO performance.',
+      'digital marketing probo (sql)': 'SEO performance.',
+      'digital marketing proni (sql)': 'SEO performance.',
+      'digital marketing prope(sql)': 'SEO performance.',
+      'financial reporting': 'Consolidated accounts results and KPIs by entity.',
+      'transactionsvolume_dashboard': 'Transaction volume monitoring across SAP B1 entities by period.',
+      'forma 8': 'Cost tracking in raw serum production by date and category.',
+      'forma 8 aprex': 'Cost tracking in raw serum production by date and category.',
+      'forma 8 biogan': 'Cost tracking in raw serum production by date and category.',
+      'forma 8 corimex': 'Cost tracking in raw serum production by date and category.',
+      'forma 8 guaimex': 'Cost tracking in raw serum production by date and category.',
+      'forma 8 honimex': 'Cost tracking in raw serum production by date and category.',
+      'forma 8 nicamex': 'Cost tracking in raw serum production by date and category.',
+      'forma 8 panimex': 'Cost tracking in raw serum production by date and category.',
+      'forma 8 salvimex': 'Cost tracking in raw serum production by date and category.',
+      'bi_bw_bpo_sales v2': 'Sales performance monitoring by date, category and business unit.',
+      'bi_bw_bpo_purchasing': 'Purchasing performance monitoring by date, supplier and category.',
+      'bi_bw_bpo_production': 'Production performance monitoring by date, plant and product category.',
+      'kpi gross margin v2': 'Sales and gross margin by date, category and distribution channel.',
+      'biowest sales analysis v2': 'Sales trend and mix analysis by date, category and customer/channel.',
+      'global raw&filtered serum inventory': 'Global inventory by SKU, date and origin (raw and filtered FBS).',
+      'inventroy_cam_sam': 'Raw inventory overview for CAM and SAM by date and country.',
+      'inventory_fr': 'FR inventory by date and category.',
+      'sku availibility bw fr inventory': 'SKU availability monitoring for BW FR inventory by item and stock status.',
+      'bw_usa_inventory': 'Inventory of BW USA by date and category (all SKUs).',
+      'bnb_sales_gross_margin': 'Sales and gross margin by date, category and distribution channel.',
+      'mayimex_sales_gross_margin': 'Sales and gross margin by date, category and distribution channel.',
+      'budget dashboard': 'Budget monitoring for ProtenaNI with variance tracking against targets.',
+      'protenani_sales_gross_margin': 'Sales and gross margin by date, category and distribution channel.',
+      'bw_usa_sales_gross_margin': 'Sales and gross margin by date, category and distribution channel.',
+      'osi_sales_gross_margin': 'Sales and gross margin by date, category and distribution channel.',
+      'indicadores de calidad latam': 'LATAM quality indicators from SCS data.',
+      'scs dashboard': 'SCS operational metrics and production indicators.',
+      'scs_troels': 'SCS data analysis tailored for Troels.',
+      'scs+b1': 'Production and blood cost by date with slaughterhouse cost control.',
+      'scs+b1 aprex': 'Production and blood cost by date with slaughterhouse cost control.',
+      'scs+b1 biogan': 'Production and blood cost by date with slaughterhouse cost control.',
+      'scs+b1 corimex': 'Production and blood cost by date with slaughterhouse cost control.',
+      'scs+b1 guaimex': 'Production and blood cost by date with slaughterhouse cost control.',
+      'scs+b1 nicamex': 'Production and blood cost by date with slaughterhouse cost control.',
+      'scs+b1 panimex': 'Production and blood cost by date with slaughterhouse cost control.',
+      'scs+b1 salvimex': 'Production and blood cost by date with slaughterhouse cost control.'
+    };
+
+    var byStandard = {
+      'bw fr sales and gross margin overview': 'Sales and gross margin by date, category and distribution channel.',
+      'biowest sales analysis': 'Sales trend and mix analysis by date, category and customer/channel.',
+      'sku availibility bw fr inventory': 'SKU availability monitoring for BW FR inventory by item and stock status.',
+      'mayimex sales and gross margin overview': 'Sales and gross margin by date, category and distribution channel.',
+      'budget overview prot ni': 'Budget monitoring for ProtenaNI with variance tracking against targets.',
+      'protenani sales and gross margin overview': 'Sales and gross margin by date, category and distribution channel.',
+      'latam quality indicators': 'LATAM quality indicators from SCS data.',
+      'scs operations dashboard': 'SCS operational metrics and production indicators.'
+    };
+
+    return byOriginal[normalizeKey(origName)] || byStandard[normalizeKey(stdName)] || '';
+  }
+
+  function buildDescriptionFallback(row) {
+    var country = row.children[1] ? row.children[1].textContent.trim() : 'N/A';
+    var area = row.children[2] ? row.children[2].textContent.trim() : 'N/A';
+    var schedule = row.children[3] ? row.children[3].textContent.trim() : 'N/A';
+    var owner = row.children[4] ? row.children[4].textContent.trim() : 'N/A';
+    var healthEl = row.querySelector('.bi-op, .bi-lim');
+    var health = healthEl ? healthEl.textContent.trim() : 'N/A';
+
+    return area + ' insights for ' + country + '. Schedule: ' + schedule + '. Owner: ' + owner + '. Status: ' + health + '.';
+  }
+
+  function addDescriptionColumn() {
+    var tables = document.querySelectorAll('table.bi-table');
+
+    Array.prototype.forEach.call(tables, function(table) {
+      var headerRow = table.querySelector('thead tr');
+
+      if (headerRow && !headerRow.querySelector('th[data-description-col="true"]')) {
+        var descTh = document.createElement('th');
+        descTh.setAttribute('data-description-col', 'true');
+        descTh.className = 'bi-desc-col';
+        descTh.style.width = '22%';
+        descTh.textContent = 'Description';
+        headerRow.insertBefore(descTh, headerRow.children[1]);
+      }
+
+      if (headerRow) {
+        var uniformWidths = ['24%', '22%', '8%', '12%', '13%', '11%', '6%', '4%'];
+        for (var i = 0; i < uniformWidths.length; i += 1) {
+          if (headerRow.children[i]) {
+            headerRow.children[i].style.width = uniformWidths[i];
+          }
+        }
+      }
+
+      var rows = table.querySelectorAll('tbody tr');
+      Array.prototype.forEach.call(rows, function(row) {
+        if (row.querySelector('td[data-description-col="true"]')) {
+          return;
+        }
+
+        var stdEl = row.querySelector('.bi-std');
+        var origEl = row.querySelector('.bi-orig');
+        var stdName = stdEl ? stdEl.textContent.trim() : '';
+        var origName = origEl ? origEl.textContent.trim() : '';
+
+        var description = getDescriptionFromLegacyData(stdName, origName);
+        if (!description) {
+          description = buildDescriptionFallback(row);
+        }
+
+        var descTd = document.createElement('td');
+        descTd.setAttribute('data-description-col', 'true');
+        descTd.className = 'bi-meta bi-desc';
+        descTd.textContent = description;
+        row.insertBefore(descTd, row.children[1]);
+      });
+    });
+  }
+
   function initCatalogueSearch() {
+    addDescriptionColumn();
+
     var input = document.getElementById('bi-search-input');
     var count = document.getElementById('bi-search-count');
     if (!input || !count) {
